@@ -1,0 +1,46 @@
+<nav class="navbar" id="navbar">
+  <div class="navbar-logo" style="cursor: pointer" (click)="gotohome()">
+    <h1>KYLIE</h1>
+  </div>
+  <div class="navbar-manu">
+    <ul class="navbar-manu-ul">
+      <li (click)="gotohome()" id="home">Home</li>
+      <li (click)="gotoCatalog()" id="cata">Catalog</li>
+      <li (click)="gotoabout()">About Us</li>
+    </ul>
+  </div>
+  <div class="navbar-manu-right">
+    <ul class="navbar-manu-right-ul">
+      <li class="navbar-manu-right-search-cont">
+        <input placeholder="Search" />
+        <i class="iconify" data-icon="akar-icons:search"></i>
+      </li>
+      <li *ngIf="_id" class="navbar-manu-right-icons bag">
+        <i class="iconify" data-icon="icon-park-outline:like"></i>
+        <div>{{ _like_count }}</div>
+      </li>
+      <li (click)="gotobag()" *ngIf="_id" class="navbar-manu-right-icons bag">
+        <i class="iconify" data-icon="akar-icons:shopping-bag"></i>
+        <div>{{ _bag_count }}</div>
+      </li>
+      <button (click)="goto()" *ngIf="_id === undefined">Login</button>
+      <li (click)="openNav()" class="mobile">
+        <i
+          id="button"
+          class="iconify main"
+          data-icon="eva:bar-chart-2-outline"
+        ></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="mobile-nav" class="mobile-nav-cont" style="display: none">
+  <ul>
+    <li>Home</li>
+    <li>Catalog</li>
+    <li>About Us</li>
+    <li *ngIf="_id">Like</li>
+    <li *ngIf="_id">Bag {{ _bag_count }}</li>
+    <button (click)="goto()" *ngIf="_id === undefined">Login</button>
+  </ul>
+</div>

@@ -1,0 +1,27 @@
+<section class="from">
+  <div class="from-cont">
+    <div class="from-info">
+      <h1>Fill in the fields</h1>
+      <p>Please fill in all to Login</p>
+    </div>
+    <form [formGroup]="login_data" (ngSubmit)="submit()" class="from-input">
+      <div class="_1">
+        <div>
+          <input formControlName="email" placeholder="Email" required />
+        </div>
+      </div>
+      <div class="_1">
+        <div>
+          <input formControlName="password" placeholder="Password" required />
+        </div>
+      </div>
+      <div class="_1">
+        <div>
+          <button>{{ button_value }}</button>
+        </div>
+      </div>
+      <p>Don't have an account yet? <a routerLink="/sign-in"> Sign Up </a></p>
+      <p style="color: tomato">{{ error }}</p>
+    </form>
+  </div>
+</section>

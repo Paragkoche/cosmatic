@@ -1,0 +1,88 @@
+.div {
+  cursor: pointer;
+  &:hover {
+    border-radius: 500px;
+  }
+  overflow: hidden;
+  width: 350px;
+  height: 500px;
+  // padding: 2px;
+  position: relative;
+  border: 2px solid var(--color1);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .img {
+    width: 100%;
+    height: 60%;
+  }
+  div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-color: var(--color4);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .h {
+      font-size: 20px;
+    }
+    button {
+      padding: 10px 9px;
+      border-radius: 50%;
+      border: 2px solid var(--color1);
+      font-family: var(--font2);
+      font-size: 15px;
+      margin-top: 4px;
+      background-color: transparent;
+      color: #8b6e58;
+    }
+    p {
+      margin: 5px 0;
+      font-family: var(--font1);
+      color: var(--color1);
+      text-align: center;
+    }
+  }
+}
+
+$mobile_devices_max: 480px;
+
+$tablets_max: 768px;
+
+$laptops_max: 1024px;
+
+$desktops_max: 1200px;
+$mobile_devices_max_small: 320px;
+
+//small mobile devices
+@media screen and (max-width: $mobile_devices_max_small) {
+  .div {
+    width: 100%;
+    margin: inherit;
+    margin-bottom: 20px;
+  }
+}
+//mobile decices
+@media only screen and (max-width: $mobile_devices_max) {
+  .div {
+    width: 100%;
+    margin: inherit;
+
+    margin-bottom: 20px;
+  }
+}
+//tablet
+@media only screen and (max-width: $tablets_max) {
+}
+@media only screen and (max-width: $laptops_max) {
+}
+//destop
+@media only screen and (max-width: $desktops_max) {
+}
+//4k monitor
+@media only screen and (min-width: 2160px) {
+}

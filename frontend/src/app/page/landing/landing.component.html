@@ -1,0 +1,258 @@
+<section class="intro">
+  <div class="slide-info">
+    <img
+      class="img-1"
+      src="https://coty.scene7.com/is/image/cotyemea/4064941009115_KJC_KGP_21_MattePlum007_Final_Effect_Julia-Look-01_Square_HR?$SQUARE-575x575-2X$&wid=480&fit=constrain"
+    />
+    <img
+      class="img-2"
+      src="https://coty.scene7.com/is/image/cotyemea/4064941009122_KJC_KGP_21_ShimmeryBronze015_Final_Effect_Nickala-Look-01_Square_HR?$SQUARE-575x575-2X$&wid=480&fit=constrain"
+    />
+    <h1>
+      MODERN BEAUTY<br />
+      PRODUCTS
+    </h1>
+    <p>
+      NEW! Watermelon Lip Oil! Fan Favorite<br />
+      Lip Oil now available in a new <br />watermelon flavor!
+    </p>
+    <div class="button">
+      <button>Shop now</button>
+      <button>Go to catalog</button>
+    </div>
+  </div>
+  <div class="slider">
+    <div
+      class="slide-con-{{ slide.indexOf(i) }}"
+      id="slide-con-{{ slide.indexOf(i) }}"
+      *ngFor="let i of slide"
+    >
+      <div class="image-cont-{{ i.indexOf(j) + 1 }}" *ngFor="let j of i">
+        <div
+          class="image-{{ i.indexOf(j) + 1 }}"
+          style="background-image: url('{{ j }}');"
+        >
+          <!-- <img class="image" src="{{ j }}" alt="" /> -->
+        </div>
+      </div>
+    </div>
+    <div class="controller">
+      <div>
+        <button (click)="left()">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.8781 3.64687L6.78125 11.9531C6.63904 12.099 6.55945 12.2947 6.55945 12.4984C6.55945 12.7022 6.63904 12.8978 6.78125 13.0437L14.8781 21.3531C14.9444 21.4212 15.0236 21.4752 15.1111 21.5122C15.1985 21.5491 15.2925 21.5681 15.3875 21.5681C15.4825 21.5681 15.5765 21.5491 15.6639 21.5122C15.7514 21.4752 15.8306 21.4212 15.8969 21.3531C16.0332 21.2136 16.1095 21.0263 16.1095 20.8312C16.1095 20.6362 16.0332 20.4489 15.8969 20.3094L8.28281 12.4984L15.8969 4.68906C16.0327 4.5496 16.1087 4.36263 16.1087 4.16796C16.1087 3.9733 16.0327 3.78633 15.8969 3.64687C15.8306 3.57883 15.7514 3.52476 15.6639 3.48783C15.5765 3.45091 15.4825 3.43188 15.3875 3.43188C15.2925 3.43188 15.1985 3.45091 15.1111 3.48783C15.0236 3.52476 14.9444 3.57883 14.8781 3.64687Z"
+              fill="#8D6E58"
+            />
+          </svg>
+        </button>
+        <button (click)="right()">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10.1219 21.3531L18.2188 13.0469C18.361 12.901 18.4406 12.7053 18.4406 12.5016C18.4406 12.2978 18.361 12.1022 18.2188 11.9563L10.1219 3.64688C10.0556 3.57884 9.97643 3.52477 9.88895 3.48784C9.80146 3.45092 9.70746 3.4319 9.6125 3.4319C9.51754 3.4319 9.42355 3.45092 9.33606 3.48784C9.24857 3.52477 9.16937 3.57884 9.10313 3.64688C8.96684 3.78641 8.89055 3.97371 8.89055 4.16875C8.89055 4.3638 8.96684 4.5511 9.10313 4.69063L16.7172 12.5016L9.10313 20.3109C8.96731 20.4504 8.89131 20.6374 8.89131 20.832C8.89131 21.0267 8.96731 21.2137 9.10313 21.3531C9.16937 21.4212 9.24857 21.4752 9.33606 21.5122C9.42355 21.5491 9.51754 21.5681 9.6125 21.5681C9.70746 21.5681 9.80146 21.5491 9.88895 21.5122C9.97643 21.4752 10.0556 21.4212 10.1219 21.3531Z"
+              fill="#8D6E58"
+            />
+          </svg>
+        </button>
+      </div>
+      <p>0{{ curr }}/<span>04</span></p>
+    </div>
+  </div>
+  <div class="controller_mobile">
+    <div>
+      <button (click)="left_mobile()">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.8781 3.64687L6.78125 11.9531C6.63904 12.099 6.55945 12.2947 6.55945 12.4984C6.55945 12.7022 6.63904 12.8978 6.78125 13.0437L14.8781 21.3531C14.9444 21.4212 15.0236 21.4752 15.1111 21.5122C15.1985 21.5491 15.2925 21.5681 15.3875 21.5681C15.4825 21.5681 15.5765 21.5491 15.6639 21.5122C15.7514 21.4752 15.8306 21.4212 15.8969 21.3531C16.0332 21.2136 16.1095 21.0263 16.1095 20.8312C16.1095 20.6362 16.0332 20.4489 15.8969 20.3094L8.28281 12.4984L15.8969 4.68906C16.0327 4.5496 16.1087 4.36263 16.1087 4.16796C16.1087 3.9733 16.0327 3.78633 15.8969 3.64687C15.8306 3.57883 15.7514 3.52476 15.6639 3.48783C15.5765 3.45091 15.4825 3.43188 15.3875 3.43188C15.2925 3.43188 15.1985 3.45091 15.1111 3.48783C15.0236 3.52476 14.9444 3.57883 14.8781 3.64687Z"
+            fill="#8D6E58"
+          />
+        </svg>
+      </button>
+      <button (click)="right_mobile()">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10.1219 21.3531L18.2188 13.0469C18.361 12.901 18.4406 12.7053 18.4406 12.5016C18.4406 12.2978 18.361 12.1022 18.2188 11.9563L10.1219 3.64688C10.0556 3.57884 9.97643 3.52477 9.88895 3.48784C9.80146 3.45092 9.70746 3.4319 9.6125 3.4319C9.51754 3.4319 9.42355 3.45092 9.33606 3.48784C9.24857 3.52477 9.16937 3.57884 9.10313 3.64688C8.96684 3.78641 8.89055 3.97371 8.89055 4.16875C8.89055 4.3638 8.96684 4.5511 9.10313 4.69063L16.7172 12.5016L9.10313 20.3109C8.96731 20.4504 8.89131 20.6374 8.89131 20.832C8.89131 21.0267 8.96731 21.2137 9.10313 21.3531C9.16937 21.4212 9.24857 21.4752 9.33606 21.5122C9.42355 21.5491 9.51754 21.5681 9.6125 21.5681C9.70746 21.5681 9.80146 21.5491 9.88895 21.5122C9.97643 21.4752 10.0556 21.4212 10.1219 21.3531Z"
+            fill="#8D6E58"
+          />
+        </svg>
+      </button>
+    </div>
+    <p>0{{ curr }}/<span>04</span></p>
+  </div>
+</section>
+<section class="best_selling">
+  <!-- <img class="hand_image" src="assets/hand.png" /> -->
+  <header class="heading">
+    <h1>BEST SELLEERS</h1>
+  </header>
+  <div class="product">
+    <app-product
+      *ngFor="let i of data.slice(0, 3)"
+      [id]="i._id"
+      [image]="i.gallery[0].url"
+      [price]="i.price"
+      [name]="i.name"
+    ></app-product>
+
+    <div>
+      <img
+        src="https://www.the-sun.com/wp-content/uploads/sites/6/2021/08/NINTCHDBPICT000671757110.jpg?w=620"
+      />
+    </div>
+    <div>
+      <img
+        src="https://n1s2.hsmedia.ru/af/8f/6f/af8f6fbd78940801216ac32e9433a819/728x906_1_10dcdc970794d4c1b05009d463cf68de@1078x1342_0xac120003_1619374021629450002.jpg"
+      />
+    </div>
+    <app-product
+      *ngFor="let i of data.slice(3, 6)"
+      [id]="i._id"
+      [image]="i.gallery[0].url"
+      [price]="i.price"
+      [name]="i.name"
+    ></app-product>
+  </div>
+</section>
+<section class="lip-care-routine">
+  <img
+    class="lip-care-routine__image"
+    src="https://kyliecosmetics.com/content/kylie-beauty/countries/us/en/kylie-skin/shop-all/shop-by-routine/LipCareRoutine/_jcr_content/root/mainArea/responsivegrid_63284/responsivegrid/image.coreimg.jpeg/1626006426167/lip-care.jpeg"
+  />
+  <div class="lip-care-routine__info">
+    <h1 class="lip-care-routine__info__h">LIP CARE ROUTINE</h1>
+    <p class="lip-care-routine__info__p">
+      My Lip Oil Duo conteins my two non-sticky, deeply hydrating, and comforing
+      lip oils. Featuring my original fan favorite Lip Oil, and juicy Watermelon
+      Lip Oil.
+    </p>
+    <p>
+      Their rich, conditioning texture combines the shine of a lip gloss with
+      the moisture-sealing effects of balm
+    </p>
+    <div class="lip-care-routine__info__button">
+      <button>SHOP NOW</button>
+    </div>
+  </div>
+</section>
+<section class="about-us" id="aboutus">
+  <div class="banner" style="background-image: url(assets/aboutus.jfif)">
+    <h1>KYLIE COSMATIC</h1>
+    <button>About US</button>
+  </div>
+  <div class="Info">
+    <div class="text">
+      <h1>KYLASH FALSE LASHES</h1>
+      <p>
+        Recreate Kylie's iconic, dramatic eye looks with full,<br />
+        long, perfectly lifted lashes!
+      </p>
+      <div>
+        <button>SHOP NOW</button>
+      </div>
+    </div>
+    <div class="img">
+      <img
+        src="https://dazedimg-dazedgroup.netdna-ssl.com/560/azure/dazed-prod/1300/2/1302594.jpg"
+      />
+      <img
+        src="https://photogenicsmedia.com/wp-content/uploads/2021/05/MARIA_VITTORIA_REALE_PHOTOGENICS_2-971x1024.jpeg"
+      />
+    </div>
+  </div>
+  <div class="values">
+    <h1>KYLIE's VALUES</h1>
+    <div>
+      <div>
+        <img src="assets/icon1.png" />
+        <h1>CLEAN</h1>
+        <p>
+          Our formules are designed with ingradients to ensure the right balance
+          between efficiency, safety and responsibility
+        </p>
+      </div>
+      <div>
+        <img src="assets/icon2.png" />
+        <h1>CRUELTY FREE</h1>
+        <p>
+          Our formules are designed with ingradients to ensure the right balance
+          between efficiency, safety and responsibility
+        </p>
+      </div>
+      <div>
+        <img src="assets/icon3.png" />
+        <h1>GLUREN FREE</h1>
+        <p>
+          Our formules are designed with ingradients to ensure the right balance
+          between efficiency, safety and responsibility
+        </p>
+      </div>
+      <div>
+        <img src="assets/icon4.png" />
+        <h1>PARABEN FREE</h1>
+        <p>
+          Our formules are designed with ingradients to ensure the right balance
+          between efficiency, safety and responsibility
+        </p>
+      </div>
+      <div>
+        <img src="assets/icon5.png" />
+        <h1>VEGAN</h1>
+        <p>
+          Our formules are designed with ingradients to ensure the right balance
+          between efficiency, safety and responsibility
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insta">
+    <p>Our Instagram</p>
+    <h1>KYLECOSMETICS</h1>
+    <swiper
+      class="div"
+      [passiveListeners]="true"
+      [slidesPerView]="6"
+      [spaceBetween]="2"
+    >
+    <ng-template swiperSlide *ngFor="let i of insta_data.edges">
+      <img
+        style="width: 10pc; height: 10pc"
+        *ngIf="i.node.__typename == 'GraphImage'"
+        (click)="gotoinsta(i.node.shortcode)"
+        src="{{ i.node.display_url }}"
+      />
+      <video
+        style="width: 10pc; height: 10pc"
+        controls
+        *ngIf="i.node.__typename == 'GraphVideo'"
+      >
+        <source src="{{ i.node.display_url }}" type="video/mp4" />
+      </video>
+    </ng-template>
+    </swiper>
+  </div>
+</section>

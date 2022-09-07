@@ -1,0 +1,55 @@
+.comm {
+  width: 500px;
+  height: 200px;
+  border: 2px solid var(--color1);
+  background-color: var(--color4);
+  font-family: var(--font2);
+  color: var(--color1);
+  padding: 20px;
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  div {
+    overflow: auto;
+    height: 87%;
+    p {
+      text-align: justify;
+    }
+  }
+}
+
+$mobile_devices_max: 480px;
+
+$tablets_max: 768px;
+
+$laptops_max: 1024px;
+
+$desktops_max: 1200px;
+$mobile_devices_max_small: 320px;
+
+//small mobile devices
+@media screen and (max-width: $mobile_devices_max_small) {
+  .comm {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+//mobile decices
+@media only screen and (max-width: $mobile_devices_max) {
+  .comm {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+//tablet
+@media only screen and (max-width: $tablets_max) {
+}
+@media only screen and (max-width: $laptops_max) {
+}
+//destop
+@media only screen and (max-width: $desktops_max) {
+}
+//4k monitor
+@media only screen and (min-width: 2160px) {
+}

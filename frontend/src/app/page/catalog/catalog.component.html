@@ -1,0 +1,18 @@
+<div class="body">
+  <div class="sort"></div>
+  <div class="prodect">
+    <div class="grid">
+      <app-product
+        *ngFor="let i of _Prodects"
+        [id]="i.id"
+        [image]="i.gallery[0].url"
+        [price]="i.price"
+        [name]="i.name"
+      >
+      </app-product>
+    </div>
+    <div>
+      <button (click)="click()">Load More</button>
+    </div>
+  </div>
+</div>

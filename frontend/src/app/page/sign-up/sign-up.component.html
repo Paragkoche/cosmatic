@@ -1,0 +1,60 @@
+<section class="from">
+  <div class="from-cont">
+    <div class="from-info">
+      <h1>Fill in the fields</h1>
+      <p>Please fill in all to Sign Up</p>
+    </div>
+    <form [formGroup]="sign_up" (ngSubmit)="submit()" class="from-input">
+      <div class="_2">
+        <div>
+          <input
+            placeholder="First name"
+            formControlName="frist_name"
+            required
+          />
+        </div>
+        <div>
+          <input formControlName="Last_name" placeholder="Last name" required />
+        </div>
+      </div>
+      <div class="_1">
+        <div>
+          <input
+            formControlName="Street_name_and_house_number"
+            placeholder="Street name and house number"
+          />
+        </div>
+      </div>
+      <div class="_3">
+        <div>
+          <input formControlName="postcode" placeholder="Postcode" />
+        </div>
+        <div>
+          <input formControlName="city" placeholder="City" />
+        </div>
+        <div>
+          <input formControlName="region" placeholder="Region" />
+        </div>
+      </div>
+      <div class="_2">
+        <div>
+          <input formControlName="password" placeholder="Password" />
+        </div>
+        <div>
+          <input formControlName="Cpassword" placeholder="Canfrom Password" />
+        </div>
+      </div>
+      <div class="_3">
+        <div>
+          <input formControlName="phone_number" placeholder="Phone number" />
+        </div>
+        <div>
+          <input formControlName="email" placeholder="email" />
+        </div>
+        <button>{{ button_value }}</button>
+      </div>
+      <p>you already registered <a routerLink="/login"> login? </a></p>
+      <p style="color: tomato">{{ error }}</p>
+    </form>
+  </div>
+</section>

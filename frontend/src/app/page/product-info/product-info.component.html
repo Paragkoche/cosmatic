@@ -1,0 +1,234 @@
+<section class="prodect-info">
+  <div class="prodect-text-info">
+    <h1>{{ _Product.name }}</h1>
+    <p>{{ _Product.price }}</p>
+    <div class="conter">
+      <div (click)="sub()">
+        <i class="iconify" data-icon="bi:dash-circle"></i>
+      </div>
+
+      <div class="disp">{{ _curr_cat }}</div>
+
+      <div (click)="add()">
+        <i class="iconify" data-icon="ant-design:plus-circle-outlined"></i>
+      </div>
+    </div>
+    <div class="text">
+      <h1>Product info</h1>
+      <p>{{ _Product.longDescription }}</p>
+      <div>
+        <p>SHARE</p>
+
+        <div>
+          <span class="iconify" data-icon="brandico:facebook"></span>
+          <span
+            class="iconify"
+            data-icon="ant-design:instagram-outlined"
+          ></span>
+          <span class="iconify" data-icon="akar-icons:tiktok-fill"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prodect-image-info">
+    <div class="side-image">
+      <div *ngFor="let i of _Product.gallery">
+        <img
+          (click)="changImage(i.url, i.isImage)"
+          *ngIf="i.isImage"
+          src="{{ i.url }}"
+        />
+        <video (click)="changImage(i.url, i.isImage)" *ngIf="!i.isImage">
+          <source src="{{ i.url }}" />
+        </video>
+      </div>
+    </div>
+    <div class="main-img">
+      <img *ngIf="currimage.isImage" src="{{ currimage.url }}" />
+      <video controls *ngIf="!currimage.isImage">
+        <source src="{{ currimage.url }}" />
+      </video>
+    </div>
+  </div>
+  <div class="prodect-by-info">
+    <div (click)="add_like()">
+      <p>Add to Favourites</p>
+      <div>
+        <i class="iconify" data-icon="icon-park-outline:like"></i>
+      </div>
+    </div>
+    <div (click)="add_bag()">
+      <p>Add to cart</p>
+      <button>&rarr;</button>
+    </div>
+  </div>
+  <!-- mobile view -->
+  <div class="prodect-image-info__mobile">
+    <div class="main-img">
+      <img *ngIf="currimage.isImage" src="{{ currimage.url }}" />
+      <video controls *ngIf="!currimage.isImage">
+        <source src="{{ currimage.url }}" />
+      </video>
+    </div>
+    <div class="side-image">
+      <div *ngFor="let i of _Product.gallery">
+        <img
+          (click)="changImage(i.url, i.isImage)"
+          *ngIf="i.isImage"
+          src="{{ i.url }}"
+        />
+        <video (click)="changImage(i.url, i.isImage)" *ngIf="!i.isImage">
+          <source src="{{ i.url }}" />
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="prodect-text-info__mobile">
+    <h1>{{ _Product.name }}</h1>
+    <p>{{ _Product.price }}</p>
+    <div class="conter">
+      <div (click)="sub()">
+        <i class="iconify" data-icon="bi:dash-circle"></i>
+      </div>
+
+      <div class="disp">{{ _curr_cat }}</div>
+
+      <div (click)="add()">
+        <i class="iconify" data-icon="ant-design:plus-circle-outlined"></i>
+      </div>
+    </div>
+    <div class="text">
+      <h1>Product info</h1>
+      <p>{{ _Product.longDescription }}</p>
+      <div>
+        <p>SHARE</p>
+
+        <div>
+          <span class="iconify" data-icon="brandico:facebook"></span>
+          <span
+            class="iconify"
+            data-icon="ant-design:instagram-outlined"
+          ></span>
+          <span class="iconify" data-icon="akar-icons:tiktok-fill"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prodect-by-info__mobile">
+    <div (click)="add_like()">
+      <p>Add to Favourites</p>
+      <div>
+        <i class="iconify" data-icon="icon-park-outline:like"></i>
+      </div>
+    </div>
+    <div (click)="add_bag()">
+      <p>Add to cart</p>
+      <button>&rarr;</button>
+    </div>
+  </div>
+</section>
+<section class="basic-info">
+  <hr />
+  <div class="cont">
+    <div>
+      <h1>USAGE</h1>
+      <button id="uages-button" (click)="show('uages')">
+        <span
+          class="iconify"
+          data-icon="dashicons:arrow-up-alt2"
+          data-rotate="180deg"
+        ></span>
+      </button>
+    </div>
+    <ul id="uages" show="false">
+      <li class="" *ngFor="let i of stoa(_Product.useage)" [innerHTML]="i"></li>
+    </ul>
+  </div>
+  <hr />
+  <div class="cont">
+    <div>
+      <h1>KEY FEATURES</h1>
+      <button id="keyfeatures-button" (click)="show('keyfeatures')">
+        <span
+          class="iconify"
+          data-icon="dashicons:arrow-up-alt2"
+          data-rotate="180deg"
+        ></span>
+      </button>
+    </div>
+    <ul show="false" id="keyfeatures">
+      <li *ngFor="let i of stoa(_Product.KeyFeatures)" [innerHTML]="i"></li>
+    </ul>
+  </div>
+  <hr />
+  <div class="cont">
+    <div>
+      <h1>Details</h1>
+      <button id="details-button" (click)="show('details')">
+        <span
+          class="iconify"
+          data-icon="dashicons:arrow-up-alt2"
+          data-rotate="180deg"
+        ></span>
+      </button>
+    </div>
+    <ul show="false" id="details">
+      <li *ngFor="let i of stoa(_Product.Details)" [innerHTML]="i"></li>
+    </ul>
+  </div>
+  <hr />
+  <div class="cont">
+    <div>
+      <h1>Shpping Restrictions</h1>
+      <button
+        id="shppingretrictions-button"
+        (click)="show('shppingretrictions')"
+      >
+        <span
+          class="iconify"
+          data-icon="dashicons:arrow-up-alt2"
+          data-rotate="180deg"
+        ></span>
+      </button>
+    </div>
+    <ul show="false" id="shppingretrictions">
+      <li
+        *ngFor="let i of stoa(_Product.ShppingRestrictions)"
+        [innerHTML]="i"
+      ></li>
+    </ul>
+  </div>
+  <hr />
+</section>
+<section class="product-review">
+  <h1>REVIEWS</h1>
+  <div>
+    <app-review
+      *ngFor="let i of _Product.reviews"
+      id="{{ i.id }}"
+      [commend]="i.comment"
+      [user_id]="i.user.id"
+      [user_name]="i.user.first_name"
+      [create_at]="i.created_at"
+    ></app-review>
+  </div>
+</section>
+<section class="semilar-product">
+  <h1>YOU MIGHT ALSO LIKE</h1>
+  <div>
+    <app-product
+      *ngFor="let i of _Product.macheProdect"
+      [name]="i.name"
+      [id]="i.id"
+      [price]="i.price"
+      image="{{ i.gallery[0].url }}"
+    ></app-product>
+  </div>
+</section>
+<section class="comment-form">
+  <form (ngSubmit)="submit()" [formGroup]="review_form">
+    <textarea formControlName="comment"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>

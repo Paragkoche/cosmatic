@@ -1,0 +1,89 @@
+@import "var.scss";
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+@font-face {
+  font-family: "sf-pro-display";
+  src: url("./assets/font/SFPRODISPLAYREGULAR.OTF");
+}
+
+@font-face {
+  font-family: "Vogue";
+  src: url("./assets/font/Vogue.ttf");
+}
+:root {
+  --color1: #{$color1};
+  --color2: #{$color2};
+  --color3: #{$color3};
+  --color4: #{$color4};
+  --font1: #{$font1};
+  --font2: #{$font2};
+  --mobile_devices_min: 320px;
+  --mobile_devices_max: 480px;
+  --tablets_min: 481px;
+  --tablets_max: 768px;
+  --laptops_min: 769px;
+  --laptops_max: 1024px;
+  --desktops_min: 1025px;
+  --desktops_max: 1200px;
+  --large_screens_min: 1201px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.9s;
+  scroll-behavior: smooth;
+}
+html {
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: rgba($color: $color4, $alpha: 0.5);
+  overflow-x: hidden;
+}
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+button,
+input {
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 0 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  width: 2px;
+}

@@ -1,0 +1,20 @@
+.body {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  .sort {
+    width: 25%;
+  }
+  .prodect {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    .grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 2pc;
+      width: calc(100% / 3);
+    }
+  }
+}
