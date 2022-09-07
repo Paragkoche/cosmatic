@@ -21,7 +21,7 @@ nodemon src/index.ts
 # Frontend
 
 *technology used*
-* Anguler
+* Angular
 * Apollo GQL cliend
 
 *start*
