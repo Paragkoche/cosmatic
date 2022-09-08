@@ -1,13 +1,12 @@
 import {
-  BeforeInsert,
-  Column,
   Entity,
+  Column,
   ObjectID,
-  OneToMany,
   ObjectIdColumn,
+  BeforeInsert,
 } from "typeorm";
-import { hash, genSalt } from "bcrypt";
-import { Reviews } from "./Reviews.entity";
+import { genSalt, hash } from "bcrypt";
+
 @Entity()
 export class User {
   @ObjectIdColumn()
@@ -21,12 +20,11 @@ export class User {
   @Column()
   password: string;
   @Column()
-  addrest: string;
+  address: string;
   @Column()
   phone_number: string;
   @Column()
   isAdmin: boolean;
-
   @BeforeInsert()
   passwordHash = async () => {
     this.password = await hash(this.password, await genSalt(14));

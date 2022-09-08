@@ -1,8 +1,8 @@
 import * as gql from "graphql";
 
-export const UserGQLType = new gql.GraphQLObjectType({
+export const UserGQL = new gql.GraphQLObjectType({
   name: "User",
-  description: "User All Field",
+  description: "All User Fileds",
   fields: () => ({
     _id: {
       type: gql.GraphQLID,
@@ -16,7 +16,8 @@ export const UserGQLType = new gql.GraphQLObjectType({
     email: {
       type: gql.GraphQLString,
     },
-    addrest: {
+
+    address: {
       type: gql.GraphQLString,
     },
     phone_number: {

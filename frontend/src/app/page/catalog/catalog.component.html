@@ -1,5 +1,40 @@
 <div class="body">
-  <div class="sort"></div>
+  <div class="sort">
+    <div class="cat">
+      <h1>Category</h1>
+      <ul>
+        <li>
+          <input type="radio" id="cos" name="cata" checked />
+          <label for="cos">
+            <div></div>
+          </label>
+          <p>Cosmetics</p>
+        </li>
+        <li>
+          <input id="ski" type="radio" name="cata" />
+          <label for="ski">
+            <div></div>
+          </label>
+          <p>Skin</p>
+        </li>
+        <li>
+          <input id="ba" type="radio" name="cata" />
+          <label for="ba">
+            <div></div>
+          </label>
+          <p>Baby</p>
+        </li>
+      </ul>
+    </div>
+    <div class="sub-cat">
+      <h1>Products</h1>
+      <ul *ngFor="let i of head">
+        <h1>{{ i }}</h1>
+        <li *ngFor="let j of sub_cat[i]">{{ j }}</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="prodect">
     <div class="grid">
       <app-product

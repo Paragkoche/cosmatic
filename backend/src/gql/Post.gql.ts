@@ -1,12 +1,8 @@
 import * as gql from "graphql";
-import db from "../database/index.databses";
-import { Gallery } from "../database/entity/Gallery.entity";
-import { Reviews } from "../database/entity/Reviews.entity";
-import { GalleryGQLType } from "./Gallery.gql";
-import { ReviewsGQLType } from "./Reviews.gql";
-export const ProductGQLType = new gql.GraphQLObjectType({
-  name: "Product",
-  description: "Product All Field",
+
+export const PostGQL = new gql.GraphQLObjectType({
+  name: "Post",
+  description: "All Post Fileds",
   fields: () => ({
     _id: {
       type: gql.GraphQLID,
@@ -35,34 +31,68 @@ export const ProductGQLType = new gql.GraphQLObjectType({
     Catagory: {
       type: gql.GraphQLString,
     },
-    subCatagory: {
-      type: gql.GraphQLString,
+    subcatagory: {
+      type: new gql.GraphQLList(subCatagoryGQL),
     },
     gallery: {
-      type: new gql.GraphQLList(GalleryGQLType),
-      // resolve: async (post) => {
-      //   console.log(post);
-
-      //   return db.getMongoRepository(Gallery).find({
-      //     where: {
-      //       Post: {
-      //         _id: post._id,
-      //       },
-      //     },
-      //   });
-      // },
+      type: new gql.GraphQLList(GalleryGQL),
     },
     reviews: {
-      type: new gql.GraphQLList(ReviewsGQLType),
-      // resolve: async (post) => {
-      //   return db.getMongoRepository(Reviews).find({
-      //     where: {
-      //       product: {
-      //         _id: post.id,
-      //       },
-      //     },
-      //   });
-      // },
+      type: new gql.GraphQLList(ReviewsGQL),
+    },
+  }),
+});
+export const subCatagoryGQL = new gql.GraphQLObjectType({
+  name: "subCatagory",
+  description: "sub-catagory fileds",
+  fields: () => ({
+    catagory: {
+      type: gql.GraphQLString,
+    },
+  }),
+});
+export const subCatagoryGQLType = new gql.GraphQLInputObjectType({
+  name: "subCatagory_Input",
+  description: "sub-catagory fileds",
+  fields: () => ({
+    catagory: {
+      type: gql.GraphQLString,
+    },
+  }),
+});
+export const GalleryGQL = new gql.GraphQLObjectType({
+  name: "Gallery",
+  description: "Gallery fileds",
+  fields: () => ({
+    url: {
+      type: gql.GraphQLString,
+    },
+    isImage: {
+      type: gql.GraphQLBoolean,
+    },
+  }),
+});
+export const GalleryGQLIn = new gql.GraphQLInputObjectType({
+  name: "Gallery_Input",
+  description: "Gallery fileds",
+  fields: () => ({
+    url: {
+      type: gql.GraphQLString,
+    },
+    isImage: {
+      type: gql.GraphQLBoolean,
+    },
+  }),
+});
+export const ReviewsGQL = new gql.GraphQLObjectType({
+  name: "Reviews",
+  description: "Reviews fileds",
+  fields: () => ({
+    comment: {
+      type: gql.GraphQLString,
+    },
+    created_at: {
+      type: gql.GraphQLString,
     },
   }),
 });
