@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie';
-import {Apollo,gql} from "apollo-angular"
+import { Apollo, gql } from 'apollo-angular';
 import {
   add_cart,
   add_like,
@@ -57,7 +57,7 @@ export class ProductInfoComponent implements OnInit {
   constructor(
     private acitve_route: ActivatedRoute,
     private route: Router,
-    private apollo:Apollo,
+    private apollo: Apollo,
     private cookes: CookieService,
     private FB: FormBuilder
   ) {}
@@ -94,6 +94,9 @@ export class ProductInfoComponent implements OnInit {
     try {
       return s.split('", "');
     } catch (e) {}
+  };
+  ss = (s: string) => {
+    return JSON.parse(s);
   };
   show = (id: string) => {
     const li: any = document.getElementById(id);
@@ -132,9 +135,10 @@ export class ProductInfoComponent implements OnInit {
   ngOnInit(): void {
     const user_id = this.cookes.get('id');
     const id: any = this.acitve_route.snapshot.paramMap.get('id');
-    this.apollo.watchQuery({
-      query:gql`
-      {Product(id:"${id}"){
+    this.apollo
+      .watchQuery({
+        query: gql`
+      {Prodect(id:"${id}"){
         longDescription
         name
         price
@@ -143,7 +147,9 @@ export class ProductInfoComponent implements OnInit {
         Details
         ShppingRestrictions
         Catagory
-        subCatagory
+        subcatagory{
+          catagory
+        }
         gallery{
           url
           isImage
@@ -152,13 +158,14 @@ export class ProductInfoComponent implements OnInit {
           comment
         }
       }}
-      `
-    }).valueChanges.subscribe((data:any)=>{
-      this._Product = data.data.Product
-      this.currimage = data.data.Product.gallery[0];
-    })
+      `,
+      })
+      .valueChanges.subscribe((data: any) => {
+        this._Product = data.data.Prodect;
+        this.currimage = data.data.Prodect.gallery[0];
+      });
     // if (user_id) {
-      
+
     // }
   }
 }

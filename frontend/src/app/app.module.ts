@@ -17,10 +17,10 @@ import { CatalogComponent } from './page/catalog/catalog.component';
 import { BagComponent } from './page/bag/bag.component';
 import { LikeComponent } from './page/like/like.component';
 import { SwiperModule } from 'swiper/angular';
-import {ApolloModule, APOLLO_OPTIONS} from 'apollo-angular'
-import {HttpLink} from 'apollo-angular/http';
-import {InMemoryCache} from '@apollo/client/core';
-import {HttpClientModule} from "@angular/common/http"
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular/http';
+import { InMemoryCache } from '@apollo/client/core';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,20 +44,22 @@ import {HttpClientModule} from "@angular/common/http"
     FormsModule,
     ReactiveFormsModule,
     SwiperModule,
-    ApolloModule
+    ApolloModule,
   ],
-  providers: [ {
-    provide: APOLLO_OPTIONS,
-    useFactory(httpLink: HttpLink) {
-      return {
-        cache: new InMemoryCache(),
-        link: httpLink.create({
-          uri: 'http://localhost:8080',
-        }),
-      };
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory(httpLink: HttpLink) {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://localhost:8000',
+          }),
+        };
+      },
+      deps: [HttpLink],
     },
-    deps: [HttpLink],
-  },],
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Apollo,gql} from "apollo-angular"
+import { Apollo, gql } from 'apollo-angular';
 import { Data } from './type';
 @Component({
   selector: 'app-landing',
@@ -38,7 +38,7 @@ export class LandingComponent implements OnInit {
   slide_con = [0, 45, 90, 135];
   slider_con_mobile = [0, 100, 200, 300];
   curr = 1;
-  constructor(private apollo:Apollo) {}
+  constructor(private apollo: Apollo) {}
   right() {
     if (this.slide_con[3] != 0) {
       const d1: any = document.getElementById('slide-con-0'),
@@ -114,34 +114,34 @@ export class LandingComponent implements OnInit {
   data: any;
   insta_data!: Data;
   ngOnInit(): void {
-    
-    fetch('/assets/instagram.json').then((e)=>{
-       e.json().then(e=>{
+    fetch('/assets/instagram.json').then((e) => {
+      e.json().then((e) => {
         console.log(e);
-        
-        this.insta_data =e.data
-      })
-    });
-    
-    this.apollo.watchQuery({
-      query: gql`
-        {Products {
-        price
-        gallery{
-          url
-        }
-        name
-        _id
-      }}
-      
-      `
-    }).valueChanges.subscribe((data:any)=>{
-      console.log
-      (data.loading)
-      console.log(data);
-      
-      this.data = data?.data?.Products
 
-    })
+        this.insta_data = e.data;
+      });
+    });
+
+    this.apollo
+      .watchQuery({
+        query: gql`
+          {
+            Prodects {
+              price
+              gallery {
+                url
+              }
+              name
+              _id
+            }
+          }
+        `,
+      })
+      .valueChanges.subscribe((data: any) => {
+        console.log(data.loading);
+        console.log(data);
+
+        this.data = data?.data?.Prodects;
+      });
   }
 }

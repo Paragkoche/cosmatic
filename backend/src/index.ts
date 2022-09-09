@@ -8,6 +8,7 @@ import {
   ReviewsGQL,
   subCatagoryGQLType,
 } from "./gql/Post.gql";
+import * as Cors from "cors";
 import { UserGQL } from "./gql/User.gql";
 import * as gql from "graphql";
 import { Gallery, Post, Reviews, subCatagory } from "./database/Post.entity";
@@ -15,7 +16,7 @@ import { User } from "./database/User.entity";
 import { compare } from "bcrypt";
 
 const app = express();
-
+app.use(Cors());
 db.initialize().then((db) => {
   app.use(
     "/",

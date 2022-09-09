@@ -4,21 +4,37 @@
       <h1>Category</h1>
       <ul>
         <li>
-          <input type="radio" id="cos" name="cata" checked />
+          <input
+            (change)="onChange(sub_cat_cosmatic, head_consmatic)"
+            type="radio"
+            id="cos"
+            name="cata"
+            checked
+          />
           <label for="cos">
             <div></div>
           </label>
           <p>Cosmetics</p>
         </li>
         <li>
-          <input id="ski" type="radio" name="cata" />
+          <input
+            (change)="onChange(sub_cat_skin, head_skin)"
+            id="ski"
+            type="radio"
+            name="cata"
+          />
           <label for="ski">
             <div></div>
           </label>
           <p>Skin</p>
         </li>
         <li>
-          <input id="ba" type="radio" name="cata" />
+          <input
+            (change)="onChange(sub_cat_cosmatic, head_body)"
+            id="ba"
+            type="radio"
+            name="cata"
+          />
           <label for="ba">
             <div></div>
           </label>
@@ -30,7 +46,7 @@
       <h1>Products</h1>
       <ul *ngFor="let i of head">
         <h1>{{ i }}</h1>
-        <li *ngFor="let j of sub_cat[i]">{{ j }}</li>
+        <li *ngFor="let j of curr[i]">{{ j }}</li>
       </ul>
     </div>
   </div>
